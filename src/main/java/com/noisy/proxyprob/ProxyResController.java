@@ -24,7 +24,7 @@ public class ProxyResController {
     public String parseRequest(HttpServletRequest request){
 
         String ipAddress = IpUtil.getIpAddr(request);
-
+        log.info("IP DETECT: {} ",ipAddress);
         return  ipAddress;
 
     }
