@@ -19,12 +19,14 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping("/test")
 public class ProxyResController {
 
+    private static final  String  tag = "IP";
+
     @ResponseBody
     @GetMapping("/parse")
     public String parseRequest(HttpServletRequest request){
 
         String ipAddress = IpUtil.getIpAddr(request);
-        log.info("IP DETECT: {} ",ipAddress);
+        log.info(tag,"IP DETECT: {} ",ipAddress);
         return  ipAddress;
 
     }
